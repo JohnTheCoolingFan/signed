@@ -23,30 +23,41 @@ where
 
 /// A pointer to absolute value of a number
 ///
-/// ```rs
+/// ```
 /// use signed::Signed;
 ///
 /// let mut n: i32 = 42; // A number to test operations with it
 ///
 /// let mut abs_n = n.get_absolute(); // Gets a "pointer" to an absolute value of a number
 ///
-/// abs_n -= 2;
+/// abs_n -= &2;
+/// drop(abs_n);
 ///
 /// assert_eq!(n, 40);
 ///
-/// abs_n += 6;
+/// let mut abs_n = n.get_absolute(); // Gets a "pointer" to an absolute value of a number
+///
+/// abs_n += &6;
+/// drop(abs_n);
 ///
 /// assert_eq!(n, 46);
 ///
 /// n = -42; // Let's try with negative number
 ///
-/// // abs_n still points to the same number, so we don't have to create a new one!
+/// // Unfortunately, due to assertions, abs_n has to be dropped before immutable use, but when n
+/// // is changed, abs_n is changed accordingly
 ///
-/// abs_n -= 4;
+/// let mut abs_n = n.get_absolute(); // Gets a "pointer" to an absolute value of a number
+///
+/// abs_n -= &4;
+/// drop(abs_n);
 ///
 /// assert_eq!(n, -38); // Now that's different, we subtracted, but got a number *bigger* than the initial one.
 ///
-/// abs_n += 6;
+/// let mut abs_n = n.get_absolute(); // Gets a "pointer" to an absolute value of a number
+///
+/// abs_n += &6;
+/// drop(abs_n);
 ///
 /// assert_eq!(n, -44); // And by adding to the absolute value, we get a number *smaller*.
 ///
