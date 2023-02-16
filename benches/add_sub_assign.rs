@@ -2,12 +2,14 @@ use criterion::{black_box, criterion_group, criterion_main, Criterion};
 use rand::prelude::*;
 use signed::Signed;
 
+#[inline]
 fn add_assign<I: Signed>(mut n: I, other: I) -> I {
     let mut abs = n.get_absolute();
     abs += &other;
     n
 }
 
+#[inline]
 fn sub_assign<I: Signed>(mut n: I, other: I) -> I {
     let mut abs = n.get_absolute();
     abs -= &other;
