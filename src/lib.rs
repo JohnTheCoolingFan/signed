@@ -63,6 +63,7 @@ where
 ///
 /// // All of this works for i8, i16, i32, i64 and i128!
 /// ```
+#[derive(Debug)]
 pub struct Absolute<'a, I: Signed> {
     num: &'a mut I,
 }
