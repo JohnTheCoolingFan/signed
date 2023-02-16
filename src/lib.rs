@@ -200,12 +200,14 @@ impl Signed for i128 {
 
 impl<'a, I: Signed> Absolute<'a, I> {
     /// Get the value of an absolute of a number this absolute value has been taken of
+    #[inline]
     pub fn get_value(&self) -> I::Unsigned {
         self.num.abs_diff(I::ZERO)
     }
 }
 
 impl<'a, I: Signed> AddAssign<&I> for Absolute<'a, I> {
+    #[inline]
     fn add_assign(&mut self, rhs: &I) {
         if self.num.is_negative() {
             self.num.sub_assign(*rhs)
@@ -216,6 +218,7 @@ impl<'a, I: Signed> AddAssign<&I> for Absolute<'a, I> {
 }
 
 impl<'a, I: Signed> SubAssign<&I> for Absolute<'a, I> {
+    #[inline]
     fn sub_assign(&mut self, rhs: &I) {
         if self.num.is_negative() {
             self.num.add_assign(*rhs)
