@@ -2,6 +2,8 @@ Things for convenient and human-friendly interaction with signed numbers and the
 
 This crate has 0 dependencies aside from std (no_std coming soon?).
 
+The crate also includes a small doctest and a criterion benchmark for all of its functions.
+
 ```
 use signed::Signed;
                                                                                                             
