@@ -2,8 +2,12 @@
 name = "signed"
 version = "0.1.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+description = "A library for working with signed numbers' absolute values avoiding confusion"
+license = "MIT"
+repository = "https://github.com/JohnTheCoolingFan/signed"
+categories = ["mathematics"]
+documentation = "https://docs.rs/signed"
+authors = ["Jonh The Cooling Fan <ivan8215145640@gmail.com>"]
 
 [dependencies]
 
