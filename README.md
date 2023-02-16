@@ -1,5 +1,7 @@
 Things for convenient and human-friendly interaction with signed numbers and their parts
 
+This crate has 0 dependencies aside from std (no_std coming soon?).
+
 ```
 use signed::Signed;
                                                                                                             
