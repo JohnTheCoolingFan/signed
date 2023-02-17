@@ -243,7 +243,8 @@ impl Signed for i128 {
 }
 
 impl<'a, I: Signed> Absolute<'a, I> {
-    /// Get the value of an absolute of a number this absolute value has been taken of
+    /// Get the value of an absolute of a number this absolute value has been taken of.
+    /// Doesn't overflow when `abs` overflows
     #[inline]
     pub fn get_value(&self) -> I::Unsigned {
         self.num.abs_diff(I::ZERO)
